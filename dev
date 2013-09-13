@@ -1,0 +1,6 @@
+#!/bin/bash
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install build-essential gfortran autoconf automake eclipse eclipse-jdt eclipse-cdt eclipse-egit eclipse-pde eclipse-xsd git git-gui doxygen doxygen-gui texlive python3 python3-scipy python3-numpy python3-matplotlib python3-docutils python3-sphinx octave qtoctave freemat gnuplot wxmaxima maxima cmake cmake-qt-gui qtcreator subversion scilab vim vim-latexsuite m4 mingw-w64 ipython make g++ nodejs libcv-dev libboost-dev virtualbox-4.2 dkmsh
+
+bash ./dev_c++

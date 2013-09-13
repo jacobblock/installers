@@ -1,0 +1,55 @@
+#!/bin/bash
+
+sudo add-apt-repository -y ppa:fransschreuder1/qucs #Qucs
+sudo apt-get update
+sudo apt-get install qcad gEDA ngspice gwave graphviz pcb electric fccexam hamexam dia geda gspiceui oregano qucs
+
+#Dpic & Circuit macros
+#https://ece.uwaterloo.ca/~aplevich/dpic/
+cd ~
+curl https://ece.uwaterloo.ca/~aplevich/dpic/dpic.tar.gz | tar xz
+cd dpic
+make
+sudo mv dpic /usr/local/bin
+cd ~
+rm -rf dpic
+
+sudo mkdir -p /usr/local/share/texmf/tex/latex/
+cd /usr/local/share/texmf/tex/latex
+sudo curl https://ece.uwaterloo.ca/~aplevich/Circuit_macros/Circuit_macros.tar.gz | sudo tar xz
+sudo mv Circuit* circuit_macros
+cd circuit_macros
+sudo make pgfdefault
+
+#add to ~/.bashrc
+#export M4PATH='/usr/local/share/texmf/tex/latex/circuit_macros/'
+#export TEXMFHOME=$HOME/texmf
+#sudo texhash
+
+#Cirkuit
+#http://wwwu.uni-klu.ac.at/magostin/cirkuit.html
+# To make it the default for .m4 files, change /usr/share/applications/kde4/cirkuit.desktop Exec=cirkuit %U
+sudo apt-get install texlive-latex-base texlive-latex-recommended texlive-pstricks texlive-base-bin texlive-extra-utils preview-latex-style m4 ghostscript pdf2svg cmake kdelibs5-dev libqt4-dev libpoppler-qt4-dev oxygen-icon-theme plasma-desktop gettext
+cd ~
+curl http://wwwu.uni-klu.ac.at/magostin/src/cirkuit-0.4.3.tar.bz2 | tar xj
+mv cirk* cirkuit
+cd cirkuit
+mkdir build
+cd build
+sudo cmake .. -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` -DQT_QMAKE_EXECUTABLE=/usr/bin/qmake-qt4
+make
+sudo make install
+cd ~
+rm -rf cirkuit
+
+# icarus verilog
+sudo apt-get install gperf
+cd ~
+git clone git://github.com/steveicarus/iverilog.git
+cd iverilog
+sh autoconf.sh
+./configure
+make
+sudo make install
+cd ~
+rm -rf iverilog

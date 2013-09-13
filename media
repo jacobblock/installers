@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo apt-get install deluge deluge-web sabnzbdplus  python-cheetah
+
+cd ~
+git clone git://github.com/midgetspy/Sick-Beard.git .sickbeard
+git clone git://github.com/RuudBurger/CouchPotatoServer.git .couchpotato
+git clone git://github.com/rembo10/headphones.git .headphones
+
+# Calibre
+sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main(install_dir='/opt')"
