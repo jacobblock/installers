@@ -14,6 +14,16 @@ sudo apt-get update
 
 #sudo sh -c "echo '## PPA ###' >> /etc/apt/sources.list"
 
+# Utilities
+sudo apt-get install filezilla
+
 # Apps
-sudo apt-get install gimp gimp-data-extras gimp-plugin-registry filezilla deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt aisleriot singularity wesnoth netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra
+sudo apt-get install gimp gimp-data-extras gimp-plugin-registry deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra
 sudo apt-get install mplayer gnome-mplayer w64codecs libdvdcss2 app-install-data-medibuntu apport-hooks-medibuntu
+
+# Dropbox
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-disk/dropboxd
+
+# Games
+sudo apt-get install aisleriot singularity wesnoth
