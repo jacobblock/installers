@@ -9,3 +9,15 @@ git clone git://github.com/rembo10/headphones.git .headphones
 
 # Calibre
 sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main(install_dir='/opt')"
+
+# minidlna
+cd ~
+sudo apt-get install autoconf g++ subversion linux-source linux-headers-`uname -r` build-essential tofrodos git-core subversion dos2unix make gcc automake cmake checkinstall git-core dpkg-dev fakeroot pbuilder dh-make debhelper devscripts patchutils quilt git-buildpackage pristine-tar git yasm checkinstall cvs mercurial
+sudo apt-get install libexif* libid3tag* libsqlite3-dev libogg-dev libvorbis-dev libflac-dev
+git clone git://git.code.sf.net/p/minidlna/git .minidlna
+cd .minidlna
+./autogen.sh
+./configure
+make
+sudo checkinstall
+

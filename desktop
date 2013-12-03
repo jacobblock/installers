@@ -6,6 +6,7 @@ sudo add-apt-repository ppa:bitcoin/bitcoin #Bitcoin
 sudo add-apt-repository ppa:ehoover/compholio #netflix
 sudo add-apt-repository ppa:langdalepl/gvfs-mtp #MTP for Galaxy S4
 sudo add-apt-repository ppa:thomas.tsai/ubuntu-tuxboot #Tuxboot
+sudo add-apt-repository ppa:rastersoft-gmail/cronopetedev #Cronopete
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' #chrome
 sudo -E wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list && sudo apt-get --quiet update && sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring # Medibuntu
@@ -18,7 +19,7 @@ sudo apt-get update
 sudo apt-get install filezilla
 
 # Apps
-sudo apt-get install gimp gimp-data-extras gimp-plugin-registry deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra
+sudo apt-get install gimp gimp-data-extras gimp-plugin-registry deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra cronopete nfs-common
 sudo apt-get install mplayer gnome-mplayer w64codecs libdvdcss2 app-install-data-medibuntu apport-hooks-medibuntu
 
 # Dropbox
@@ -27,3 +28,7 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 # Games
 sudo apt-get install aisleriot singularity wesnoth
+
+# Server shares
+sudo mkdir /mnt/mediaNAS
+sudo mount 192.168.1.2:/mnt/tetra/media /mnt/mediaNAS
