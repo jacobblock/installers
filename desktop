@@ -19,7 +19,7 @@ sudo apt-get update
 sudo apt-get install filezilla
 
 # Apps
-sudo apt-get install gimp gimp-data-extras gimp-plugin-registry deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra cronopete nfs-common
+sudo apt-get install gimp gimp-data-extras gimp-plugin-registry deluge vlc conky conky-all inkscape shutter scribus blender audacity gparted samba cheese openshot google-chrome-beta xchat icedtea-7-plugin skype wine bitcoin-qt netflix-desktop curl gvfs flashplugin-installer usb-creator-gtk tuxboot terra cronopete nfs-common acidrip
 sudo apt-get install mplayer gnome-mplayer w64codecs libdvdcss2 app-install-data-medibuntu apport-hooks-medibuntu
 
 # Dropbox

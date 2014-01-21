@@ -2,7 +2,7 @@
 
 sudo add-apt-repository -y ppa:fransschreuder1/qucs #Qucs
 sudo apt-get update
-sudo apt-get install qcad gEDA ngspice gwave graphviz pcb electric fccexam hamexam dia geda gspiceui oregano qucs
+sudo apt-get install qcad gEDA ngspice gwave graphviz pcb electric fccexam hamexam dia geda gspiceui oregano qucs texlive
 
 #Dpic & Circuit macros
 #https://ece.uwaterloo.ca/~aplevich/dpic/
